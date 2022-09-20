@@ -7,7 +7,7 @@ class Product {
         this.percent = percent,
         this.capt = capt
     }
-}
+};
 function getBankValues() {
     const a = new Product (
              document.querySelector('.num1').value, 
@@ -32,22 +32,20 @@ function getUserValues() {
         document.querySelector('.num5').value,
         document.querySelector('.num6').value
     ];
-}
+};
 function user (){
     const x = getUserValues();
     for (let i = 0; i < bankProduct.length; i++){
-        let u = Object.values(bankProduct[i])
+        let u = Object.values(bankProduct[i]);
         for (let i = 0; i < u.length; i++){
             if (x[0] === u[i]){
-                const result = x[1] * ((1 + (u[i+1] / 100) / (12 / u[i+2])) ** (x[2] / u[i+2]));
-                result.toFixed();
-                answer('Депозит:' + ' ' + x[1] + '<br \/><br \/>Процентов начисленно:' + ' ' + (result - x[1]) + ' ' + '<br \/><br \/>Общая сумма выплат:' + ' ' + result)
-                
-            }
+                const result = (x[1] * ((1 + (u[i+1] / 100) / (12 / u[i+2])) ** (x[2] / u[i+2]))).toFixed(3);                
+                answer(x[0] + '<br \/><br \/>Депозит:' + ' ' + x[1] + '<br \/><br \/>Процентов начисленно:' + ' ' + (result - x[1]).toFixed(3) + ' ' + '<br \/><br \/>Общая сумма выплат:' + ' ' + result);            
+            };
             break;
-        }
-    }    
-}
+        };
+    };   
+};
 
 // Результат
 
