@@ -25,7 +25,6 @@ document
     .addEventListener('click', getBankValues);
 
 // Клиент
-
 function getUserValues() {
     return [
         document.querySelector('.num4').value,
